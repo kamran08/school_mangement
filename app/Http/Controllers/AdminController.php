@@ -5,9 +5,33 @@ use App\Models\Group;
 use App\Models\Section;
 use App\Models\Subject;
 use Illuminate\Http\Request;
+use Auth;
 
 class AdminController extends Controller
 {
+    public function logout(){
+        Auth::logout();
+        return view('login');
+    }
+
+    public function loginApi(Request $request){
+        $data = $request->all();
+        $this->validate($request, array(
+            'email' => 'required | string | email | max:191',
+            'password'  => 'required | string | max:255',
+        ));
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            // return $data;
+            if(Auth::user()->userType == 'Admin') {
+
+                return redirect('/admin');
+            }
+            return redirect('/');
+        } else {
+            // toast('Does not match login Credentials', 'error')->autoClose(2000)->timerProgressBar();
+            return redirect()->back();
+        }
+    }
     //
 
         // $this->validate($request, array(
@@ -62,6 +86,10 @@ class AdminController extends Controller
     public function getSection($key){
         $d = Section::where('group_id',$key)->withCount('students')->get();
         return view('section.index')->with('data', $d);
+    }
+    public function getSectionById($id){
+        $d = Section::where('group_id',$id)->withCount('students')->get();
+        return $d;
     }
     public function addSectionApi(Request $request){
         $data = $request->all();

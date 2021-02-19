@@ -48,37 +48,20 @@
 
                 <!-- Jumbotron -->
                 <div class="p-6 text-center bg-light">
-                    <form action="/loginApi" method="post">
-                        @csrf
+                    <div class="container text-cente bg-light">
+                        <p>
+                            textContent returns null if the element is a document, a document type, or a notation. To grab all of the text and CDATA data for the whole document, one could use document.documentElement.textContent.
 
-                        <div class="form-outline l">
-                            <label class="form-label" for="formControlDefault">ID/EMAIL</label>
-                            <input type="email" name="email" id="formControlDefault" class="form-control @error('email') is-invalid @enderror" />
-                            @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                        <div class="form-outline l">
-                            <label class="form-label" for="formControlDefault">Password</label>
-                            <input type="password" name="password" id="formControlDefault" class="form-control  @error('password') is-invalid @enderror" />
-                            
-                            @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                        <div class="form-outline l">
-                            <button type="submit" class="btn btn-primary">Button</button>
-                        </div>
-                    </form>
+                            If the node is a CDATA section, a comment, a processing instruction, or a text node, textContent returns the text inside this node (the nodeValue).
+
+                            For other node types, textContent returns the concatenation of the textContent attribute value of every child node, excluding comments and processing instruction nodes. This is an empty string if the node has no children.
+
+                            Setting this property on a node removes all of its children and replaces them with a single text node with the given value.
+                        </p>
+                    </div>
                 </div>
                 <!-- Jumbotron -->
             </header>
-
-
 
         </div>
     </main>
@@ -106,10 +89,6 @@
     }
 
     .p-6 {
-        padding: 10rem !important;
-    }
-
-    .l {
-        padding-bottom: 20px;
+        padding: 12rem !important;
     }
 </style>

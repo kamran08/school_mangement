@@ -16,6 +16,8 @@
 <body>
     <main class="_main">
         <div class="">
+
+
             <header>
                 <!-- Navbar -->
                 <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -35,6 +37,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="/login">Login</a>
                                 </li>
+
                                 @else
                                 <li class="nav-item">
                                     <a class="nav-link" href="/logout">Logout</a>
@@ -48,36 +51,16 @@
 
                 <!-- Jumbotron -->
                 <div class="p-6 text-center bg-light">
-                    <form action="/loginApi" method="post">
-                        @csrf
-
-                        <div class="form-outline l">
-                            <label class="form-label" for="formControlDefault">ID/EMAIL</label>
-                            <input type="email" name="email" id="formControlDefault" class="form-control @error('email') is-invalid @enderror" />
-                            @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                        <div class="form-outline l">
-                            <label class="form-label" for="formControlDefault">Password</label>
-                            <input type="password" name="password" id="formControlDefault" class="form-control  @error('password') is-invalid @enderror" />
-                            
-                            @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
-                        </div>
-                        <div class="form-outline l">
-                            <button type="submit" class="btn btn-primary">Button</button>
-                        </div>
-                    </form>
+                    <div class="form-outline l">
+                        <label class="form-label" for="formControlDefault">ID/EMAIL</label>
+                        <input type="text" id="formControlDefault" class="form-control" />
+                    </div>
+                    <div class="form-outline">
+                        <button type="button" class="btn btn-primary">Button</button>
+                    </div>
                 </div>
                 <!-- Jumbotron -->
             </header>
-
 
 
         </div>
@@ -105,11 +88,11 @@
         text-align: center;
     }
 
-    .p-6 {
-        padding: 10rem !important;
-    }
-
     .l {
         padding-bottom: 20px;
+    }
+
+    .p-6 {
+        padding: 12rem !important;
     }
 </style>

@@ -8,9 +8,7 @@
                 <p class="_1card_header_title">1st year student list</p>
 
                 <div class="_dashboard_actions">
-                    <button class="_btn_sm"><i class="fas fa-plus"></i> New</button>
-                    <button class="_btn_sm _mar_l5 _mar_r5"><i class="fas fa-filter"></i> Filter</button>
-                    <button class="_btn_sm"><i class="fas fa-file-export"></i> Export</button>
+                    <button class="_btn_sm"><a href="/admin/student/add"></a> <i class="fas fa-plus"></i> New</button>
                 </div>
             </div>
 

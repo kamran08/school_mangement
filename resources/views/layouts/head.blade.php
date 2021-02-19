@@ -43,8 +43,8 @@
                             </div>
 
                             <ul class="nav">
-                                <li class="nav_active"><a href="/admin/firstYear">Inter 1st year</a></li>
-                                <li><a href="/admin/secondYear">Inter 2nd year </a></li>
+                                <li class="nav_active"><a href="/admin/student/1">Inter 1st year</a></li>
+                                <li><a href="/admin/student/2">Inter 2nd year </a></li>
                             </ul>
                         </li>
                         <li>
@@ -112,7 +112,7 @@
                 <!-- Menu -->
                 <div class="_1menu _d_flex justify-content-between _bg_default">
                     <div class="">
-                    <!-- <div class="_1menu_search"> -->
+                        <!-- <div class="_1menu_search"> -->
                         <!-- <p class="_1menu_search_icon"><i class="fas fa-search"></i></p> -->
                         <!-- <input type="text" placeholder="Serach"> -->
                     </div>

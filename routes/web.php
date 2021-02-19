@@ -2,6 +2,7 @@
 
     use Illuminate\Support\Facades\Route;
     use App\Http\Controllers\AdminController;
+    use App\Http\Controllers\StudentController;
 
     /*
     |--------------------------------------------------------------------------
@@ -16,8 +17,18 @@
 
 
 
-    
-    
+
+    Route::get('/', function () {
+        return view('index');
+    });
+    Route::get('/login', function () {
+        return view('login');
+    });
+    Route::get('/logout', [AdminController::class, 'logout']);
+    Route::post('/loginApi', [AdminController::class, 'loginApi']);
+    Route::get('/about', function () {
+        return view('about');
+    });
     Route::prefix('admin')->group(function () {
         Route::get('/', function () {
             return view('welcome');
@@ -35,6 +46,7 @@
         // Route::get('/group/{id}', [AdminController::class, 'editGroupsPage']);
         // section
         Route::get('/sections/{id}', [AdminController::class, 'getSection']);
+        Route::get('/getSectionById/{id}', [AdminController::class, 'getSectionById']);
         
         Route::post('/addSectionApi', [AdminController::class, 'addSectionApi']);
         Route::get('/addSectionView', [AdminController::class, 'addSectionView']);
@@ -48,14 +60,13 @@
         Route::get('/addSubject', [AdminController::class, 'addSubject']);
         Route::post('/addSubjectApi', [AdminController::class, 'addSubjectApi']);
         Route::get('/deleteSubject/{id}', [AdminController::class, 'deleteSubject']);
-            
         
+        // student list
+        Route::get('/student/{key}', [StudentController::class, 'getStudents']);
+        Route::get('/students/add', [StudentController::class, 'studentAdd']);
+        Route::post('/addStudentApi', [StudentController::class, 'addStudentApi']);
+        Route::get('/deleteStudent/{id}', [StudentController::class, 'deleteStudent']);
         
-
-
-        Route::get('/firstYear', function () {
-            return view('firstYear');
-        });
         Route::get('/secondYear', function () {
             return view('secondYear');
         });

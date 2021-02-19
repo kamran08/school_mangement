@@ -29,21 +29,21 @@
                         </thead>
 
                         <tbody>
-                            @if (isset($data))
-                            @foreach($data as $key => $value)
-                            <tr>
-                                <td>
-                                    <a href="">{{$value->name}}</a>
-                                </td>
-                                <td>{{$value->students_count}}</td>
-                                <td>
-                                    <a href="/admin/editSection/{{$value->id}}"><button class="_btn_sm _mar_l5 _mar_r5"><i class="fas fa-pencil-alt"></i> Edit</button>
-                                    </a>
-                                    <a href="/admin/deleteSection/{{$value->id}}"><button class="_btn_sm _mar_l5 _mar_r5"><i class="fas fa-trash"></i>Delete</button>
-                                    </a>
-                                </td>
-                            </tr>
-                            @endforeach
+                            @if(isset($data))
+                                @foreach($data as $key => $value)
+                                <tr>
+                                    <td>
+                                        <a href="">{{$value->name}}</a>
+                                    </td>
+                                    <td>{{$value->students_count}}</td>
+                                    <td>
+                                        <a href="/admin/editSection/{{$value->id}}"><button class="_btn_sm _mar_l5 _mar_r5"><i class="fas fa-pencil-alt"></i> Edit</button>
+                                        </a>
+                                        <a href="/admin/deleteSection/{{$value->id}}"><button class="_btn_sm _mar_l5 _mar_r5"><i class="fas fa-trash"></i>Delete</button>
+                                        </a>
+                                    </td>
+                                </tr>
+                                @endforeach
                             @endif
 
 

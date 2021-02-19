@@ -20,6 +20,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'group_id',
+        'section_id',
+        'class_id',
+        'userType',
+        'createdBy',
+        'gender',
+        
     ];
 
     /**
@@ -40,4 +47,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function section()
+    {
+        return $this->belongsTo(Section::class, 'section_id');
+    }
+    public function group()
+    {
+        return $this->belongsTo(Group::class, 'group_id');
+    }
+    public function class()
+    {
+        return $this->belongsTo(clas::class, 'class_id');
+    }
 }
