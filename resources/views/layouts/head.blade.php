@@ -98,7 +98,7 @@
                                 <div class="nav_item_icon">
                                     <i class="fas fa-copy"></i>
                                 </div>
-                                <span class="nav_item_text">Logout</span>
+                                <a class="nav-link" href="/logout"> <span class="nav_item_text">Logout</span></a>
                             </div>
 
                         </li>
@@ -130,7 +130,7 @@
 
 
                                     <ul class="profile_drop_list">
-                                        <li><a href="">Logout</a></li>
+                                        <li><a class="nav-link" href="/logout">Logout</a></li>
                                     </ul>
                                 </div>
                             </div>
