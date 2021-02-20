@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 19, 2021 at 07:54 PM
+-- Generation Time: Feb 20, 2021 at 05:53 PM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -57,6 +57,16 @@ CREATE TABLE `exams` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `exams`
+--
+
+INSERT INTO `exams` (`id`, `name`, `year`, `class_id`, `created_at`, `updated_at`) VALUES
+(1, '1st Semester', 2020, 1, '2021-02-20 14:53:56', NULL),
+(2, '2nd Semester', 2020, 1, '2021-02-20 14:54:09', NULL),
+(3, 'Semester Final', 2020, 1, '2021-02-20 14:54:09', NULL),
+(4, 'new', 2000, 1, '2021-02-20 15:20:02', '2021-02-20 09:18:58');
+
 -- --------------------------------------------------------
 
 --
@@ -107,9 +117,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 CREATE TABLE `results` (
   `id` int(20) NOT NULL,
   `subject_id` int(11) DEFAULT NULL,
+  `exam_id` int(11) NOT NULL,
   `student_id` int(11) DEFAULT NULL,
   `marks` double DEFAULT NULL,
-  `results` double DEFAULT NULL,
+  `result` double DEFAULT NULL,
   `grade` varchar(12) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL
@@ -199,7 +210,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `gender`, `email`, `email_verified_at`, `password`, `userType`, `image`, `class_id`, `group_id`, `section_id`, `createdBy`, `updatedBy`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'salman', 'male', 'ahmedkamran@gmail.com', NULL, '$2b$10$cFOVOjTuNJ4CAPLST0JNu.OqqSvPnh9EXBvlcyje/2jQuFA0kVqqi', 'Admin', '/img/mobile2.png', 1, 1, 1, 2, 2, NULL, NULL, NULL),
 (2, 'kamran', 'male', 'salman@gmail.com', NULL, '$2b$10$cFOVOjTuNJ4CAPLST0JNu.OqqSvPnh9EXBvlcyje/2jQuFA0kVqqi', 'General', '/img/mobile2.png', 1, 1, 1, 2, 2, NULL, NULL, NULL),
-(4, 'salman', 'male', 'salman21@gmail.com', NULL, '$2y$10$cXFIi9uBb.I1ZNSh13lP4uvhcrJoWwdW7KFBjcLqlxowY9pjAD1cK', 'General', NULL, 1, 1, 2, 1, NULL, NULL, '2021-02-19 12:52:52', '2021-02-19 12:52:52');
+(4, 'salman', 'male', 'salman21@gmail.com', NULL, '$2y$10$cXFIi9uBb.I1ZNSh13lP4uvhcrJoWwdW7KFBjcLqlxowY9pjAD1cK', 'General', '/img/mobile2.png', 1, 1, 2, 1, NULL, NULL, '2021-02-19 12:52:52', '2021-02-19 12:52:52'),
+(6, 'teacher', 'male', 'teacher@gmail.com', NULL, '$2y$10$cXFIi9uBb.I1ZNSh13lP4uvhcrJoWwdW7KFBjcLqlxowY9pjAD1cK', 'Teacher', '/img/mobile2.png', 1, 1, 2, 1, NULL, NULL, '2021-02-19 12:52:52', '2021-02-19 12:52:52');
 
 --
 -- Indexes for dumped tables
@@ -268,7 +280,7 @@ ALTER TABLE `clas`
 -- AUTO_INCREMENT for table `exams`
 --
 ALTER TABLE `exams`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `groups`
@@ -304,7 +316,7 @@ ALTER TABLE `subjects`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
