@@ -1,97 +1,118 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Result Mangement</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
 
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <title>Result Management</title>
+    <!-- Fontawesome css -->
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome-all.min.css" media="all" />
+    <!-- Animate css -->
+    <link rel="stylesheet" type="text/css" href="/css/animate.min.css" />
+    <!-- owl carousel css -->
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" media="all" />
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="/css/style.css" media="all" />
 </head>
 
 <body>
-    <main class="_main">
-        <div class="">
-            <header>
-                <!-- Navbar -->
-                <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarExample01">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item active">
-                                    <a class="nav-link" aria-current="page" href="/">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/about">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/result">Result</a>
-                                </li>
-                                @if (!Auth::check())
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/login">Login</a>
-                                </li>
-                                @else
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/logout">Logout</a>
-                                </li>
-                                @endif
-                            </ul>
-                        </div>
+    <!-- Header Section Start -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3">
+                    <div class="logo">
+                        Result Management
+                        <!-- <a href=""><img src="/img/logo-light.png" alt="logo" /></a> -->
                     </div>
-                </nav>
-                <!-- Navbar -->
-
-                <!-- Jumbotron -->
-                <div class="p-6 text-center bg-light">
-                    <div class="container text-cente bg-light">
+                </div>
+                <div class="col-xl-9 text-right">
+                    <nav class="mainmenu">
+                        <ul>
+                            <li><a href="/">home</a></li>
+                            <li><a href="/result">Result</a></li>
+                            <li><a href="/about">About</a></li>
+                            @if (!Auth::check())
+                            <li><a href="/login">Login</a></li>
+                            @else
+                            <li><a class="nav-link" href="/logout">Logout</a>
+                            </li>
+                            @endif
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+    <!-- Slider Section Start -->
+    <section class="slider">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 text-center">
+                    <div class="slider_content">
                         <p>
-                            textContent returns null if the element is a document, a document type, or a notation. To grab all of the text and CDATA data for the whole document, one could use document.documentElement.textContent.
+                            Proin gravida nibh vel velit auctor aliquet aenean sollicitudin, lorem quis bibendum auctor, nisi elit cuat ipsum,
+                            nec sagittis sem nibh id elit duis sed odio sit nibh vulputate cursus a sit amet mauris morbi accumsan.
+                            nec sagittis sem nibh id elit duis sed odio sit nibh vulputate cursus a sit amet mauris morbi accumsan.
+                            nec sagittis sem nibh id elit duis sed odio sit nibh vulputate cursus a sit amet mauris morbi accumsan.
 
-                            If the node is a CDATA section, a comment, a processing instruction, or a text node, textContent returns the text inside this node (the nodeValue).
 
-                            For other node types, textContent returns the concatenation of the textContent attribute value of every child node, excluding comments and processing instruction nodes. This is an empty string if the node has no children.
-
-                            Setting this property on a node removes all of its children and replaces them with a single text node with the given value.
                         </p>
                     </div>
                 </div>
-                <!-- Jumbotron -->
-            </header>
-
+            </div>
         </div>
-    </main>
+    </section>
+    <!-- Slider Section End -->
 
-    <footer class="bg-light text-center text-lg-start s">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-            © 2021 Copyright:
-            <a class="text-dark" href="/">Result Management</a>
+
+
+    <!-- Contact Section Start -->
+
+    <!-- Contact Section End -->
+
+    <!-- Price Section Start -->
+
+    <!-- Price Section End -->
+    <!-- Footer Section Start -->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 mx-auto text-center">
+                    <div class="footer_content">
+                        <h1>Get In Touch</h1>
+                        <ul>
+                            <li>Result Management</li>
+                            <li>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                            </li>
+                        </ul>
+                        <p>&copy; Result Mangement 2021, All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Copyright -->
-    </footer>
+    </div>
+    <!-- Footer Section End -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="/js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="/js/popper.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript" src="/js/holder.min.js"></script>
 </body>
 
 </html>
-<style>
-    .s {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: red;
-        color: white;
-        text-align: center;
-    }
-
-    .p-6 {
-        padding: 12rem !important;
-    }
-</style>
