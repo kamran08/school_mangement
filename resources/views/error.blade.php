@@ -16,6 +16,8 @@
 <body>
     <main class="_main">
         <div class="">
+
+
             <header>
                 <!-- Navbar -->
                 <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -24,26 +26,7 @@
                             <i class="fas fa-bars"></i>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarExample01">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item active">
-                                    <a class="nav-link" aria-current="page" href="/">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/about">About</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/result">Result</a>
-                                </li>
-                                @if (!Auth::check())
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/login">Login</a>
-                                </li>
-                                @else
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/logout">Logout</a>
-                                </li>
-                                @endif
-                            </ul>
+                          
                         </div>
                     </div>
                 </nav>
@@ -51,20 +34,13 @@
 
                 <!-- Jumbotron -->
                 <div class="p-6 text-center bg-light">
-                    <div class="container text-cente bg-light">
-                        <p>
-                            textContent returns null if the element is a document, a document type, or a notation. To grab all of the text and CDATA data for the whole document, one could use document.documentElement.textContent.
-
-                            If the node is a CDATA section, a comment, a processing instruction, or a text node, textContent returns the text inside this node (the nodeValue).
-
-                            For other node types, textContent returns the concatenation of the textContent attribute value of every child node, excluding comments and processing instruction nodes. This is an empty string if the node has no children.
-
-                            Setting this property on a node removes all of its children and replaces them with a single text node with the given value.
-                        </p>
-                    </div>
+                   <h1>
+                    We are working on it!
+                   </h1>
                 </div>
                 <!-- Jumbotron -->
             </header>
+
 
         </div>
     </main>
@@ -89,6 +65,10 @@
         background-color: red;
         color: white;
         text-align: center;
+    }
+
+    .l {
+        padding-bottom: 20px;
     }
 
     .p-6 {

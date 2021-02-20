@@ -5,11 +5,10 @@
     <div class="col-12 col-md-12 col-lg-12">
         <div class="_1card _mar_b15 _b_radious7 _5box_shadow _0border">
             <div class="_1card_header _padd20">
-                <p class="_1card_header_title">{{ request()->route()->parameters['key']==1?"1st ":"2nd " }}
-                    year student list</p>
+                <p class="_1card_header_title">Teachers list</p>
 
                 <div class="_dashboard_actions">
-                    <button class="_btn_sm"><a href="/admin/students/add"> <i class="fas fa-plus"></i> New</a></button>
+                    <button class="_btn_sm"><a href="/admin/teachers/add"> <i class="fas fa-plus"></i> New</a></button>
                 </div>
             </div>
 
@@ -49,7 +48,7 @@
                                 <td>{{$item->group->name}}</td>
                                 @endif
                                 <td>
-                                    <a href="/admin/deleteStudent/{{$item->id}}"><button class="_btn_sm _mar_l5 _mar_r5"><i class="fas fa-trash"></i>Delete</button>
+                                    <a href="/admin/deleteTeacher/{{$item->id}}"><button class="_btn_sm _mar_l5 _mar_r5"><i class="fas fa-trash"></i>Delete</button>
                                     </a>
 
                                 </td>

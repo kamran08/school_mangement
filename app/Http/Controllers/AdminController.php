@@ -22,7 +22,7 @@ class AdminController extends Controller
         ));
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // return $data;
-            if(Auth::user()->userType == 'Admin') {
+            if(Auth::user()->userType == 'Admin' || Auth::user()->userType == 'Teacher') {
 
                 return redirect('/admin');
             }

@@ -53,6 +53,18 @@
                                     <i class="fas fa-copy"></i>
                                 </div>
 
+                                <a href="/admin/teacher">
+                                    <span class="nav_item_text">Teachers</span>
+                                </a>
+
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav_item">
+                                <div class="nav_item_icon">
+                                    <i class="fas fa-copy"></i>
+                                </div>
+
                                 <a href="/admin/group">
                                     <span class="nav_item_text">Groups</span>
                                 </a>
@@ -118,7 +130,10 @@
                     </div>
 
                     <div class="_1menu_list">
-
+                       
+                            <a class="nav-link" href="/logout"> <button class="_btn_sm _mar_l5 _mar_r5"> Logout</button></a>
+                        
+                        <!-- 
                         <li>
                             <div class="profile">
                                 <img src="/img/mobile2.png" alt="" title="">
@@ -129,12 +144,10 @@
                                     <p class="profile_drop_title"><i class="fas fa-crown"></i> Go Pro</p>
 
 
-                                    <ul class="profile_drop_list">
-                                        <li><a class="nav-link" href="/logout">Logout</a></li>
-                                    </ul>
+
                                 </div>
                             </div>
-                        </li>
+                        </li> -->
                     </div>
                 </div>
                 <!-- Menu -->

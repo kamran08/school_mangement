@@ -3,6 +3,7 @@
     use Illuminate\Support\Facades\Route;
     use App\Http\Controllers\AdminController;
     use App\Http\Controllers\StudentController;
+    use App\Http\Controllers\ExamController;
 
     /*
     |--------------------------------------------------------------------------
@@ -17,12 +18,17 @@
 
 
 
-
+    Route::get('/result', function () {
+        return view('result');
+    });
     Route::get('/', function () {
         return view('index');
     });
     Route::get('/login', function () {
         return view('login');
+    });
+    Route::get('/error', function () {
+        return view('error');
     });
     Route::get('/logout', [AdminController::class, 'logout']);
     Route::post('/loginApi', [AdminController::class, 'loginApi']);
@@ -66,7 +72,22 @@
         Route::get('/students/add', [StudentController::class, 'studentAdd']);
         Route::post('/addStudentApi', [StudentController::class, 'addStudentApi']);
         Route::get('/deleteStudent/{id}', [StudentController::class, 'deleteStudent']);
+        // teacher list
+        Route::get('/teacher', [StudentController::class, 'getTeachers']);
+        Route::get('/teachers/add', [StudentController::class, 'teacherAdd']);
+        Route::post('/addTeacherApi', [StudentController::class, 'addTeacherApi']);
+        Route::get('/deleteTeacher/{id}', [StudentController::class, 'deleteTeacher']);
+
+        // Exam 
+        Route::get('/exam', [ExamController::class, 'getexams']);
+        Route::get('/exam/add', [ExamController::class, 'addExam']);
+        Route::post('/examApi', [ExamController::class, 'examApi']);
+        // resutls
+        Route::get('/results', [ExamController::class, 'results']);
         
+
+        
+       
         Route::get('/secondYear', function () {
             return view('secondYear');
         });
@@ -79,7 +100,7 @@
         return view('login');
         });
         
-        Route::get('/exam', function () {
-            return view('exam');
-        });
+        // Route::get('/exam', function () {
+        //     return view('exam');
+        // });
     });

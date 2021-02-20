@@ -31,6 +31,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="/about">About</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/result">Result</a>
+                                </li>
                                 @if (!Auth::check())
                                 <li class="nav-item">
                                     <a class="nav-link" href="/login">Login</a>
@@ -63,7 +66,7 @@
                         <div class="form-outline l">
                             <label class="form-label" for="formControlDefault">Password</label>
                             <input type="password" name="password" id="formControlDefault" class="form-control  @error('password') is-invalid @enderror" />
-                            
+
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
