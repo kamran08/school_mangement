@@ -56,30 +56,56 @@
     <section class="slider">
         <div class="container">
             <div class="row">
-                <div class="col-xl-12 text-center">
-                    <div class="slider_content">
-                        <h1>Enter your credential</h1>
-                        <form action="/loginApi" method="post">
-                            @csrf
-                            
+                <div class="col-xl-12 dis-flex justify-content-center align-items-center">
+                    <form action="/loginApi" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label style="color: white !important;" for="exampleInputEmail1">Email address</label>
+                            <input type="email" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label style="color: white !important;" for="exampleInputPassword1">Password</label>
+                            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="exampleInputPassword1" placeholder="Password">
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                    </form>
+
+                    <!-- <div class="col-xl-12 text-center">
+                        <div class="slider_content">
+                            <h1>Enter your credential</h1>
+                            <form action="/loginApi" method="post">
+                                @csrf
+
                                 <input type="email" name="email" />
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
-                                <input type="password" name="password"  />
+                                <input type="password" name="password" />
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                                 @enderror
-                        
-                            
+
+
                                 <button type="submit" class="btn btn-primary">Button</button>
-                            
-                        </form>
-                    </div>
+
+                            </form>
+                        </div>
+                    </div> -->
+
                 </div>
             </div>
         </div>
